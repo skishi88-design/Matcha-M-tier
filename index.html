@@ -240,13 +240,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 
 /* HERO EDITORIAL COVER */
 .hero-cover{width:100vw;margin-left:calc(50% - 50vw);margin-right:0;padding:0;display:flex;flex-direction:column;margin-bottom:48px;overflow:hidden}
-.hero-cover-text{order:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px var(--pad) 32px;width:100%;background:#fff}
+.hero-cover-text{order:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px var(--pad) 32px;padding-left:max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)));width:100%;background:#fff;box-sizing:border-box}
 .hero-cover-text .hero-h,.hero-cover-text .hero-sub{margin-left:auto;margin-right:auto;text-align:center}
 .hero-cover-img{order:2;width:100%;max-width:100%;display:block;object-fit:cover;object-position:center;min-height:clamp(260px,56vw,440px);margin:0;padding:0}
 @media(min-width:768px){
-  .hero-cover{flex-direction:row;align-items:stretch;min-height:clamp(400px,50vh,660px)}
-  .hero-cover-text{flex:0 0 50%;width:50%;max-width:none;min-height:clamp(400px,50vh,660px);padding:clamp(40px,5vw,88px) var(--pad)}
-  .hero-cover-img{flex:0 0 50%;width:50%;min-height:clamp(400px,50vh,660px);height:auto;align-self:stretch;object-position:72% center;margin:0;padding:0}
+  .hero-cover{position:relative;flex-direction:row;align-items:stretch;min-height:clamp(400px,50vh,660px);width:100vw;max-width:100vw}
+  .hero-cover-text{flex:0 0 50vw;width:50vw;max-width:none;min-height:clamp(400px,50vh,660px);padding:clamp(40px,5vw,88px) var(--pad);padding-left:max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)));box-sizing:border-box}
+  .hero-cover-img{position:absolute;top:0;right:0;width:50vw;height:100%;object-fit:cover;object-position:72% center;margin:0;padding:0}
 }
 @media(max-width:1024px){
   :root{--pad:40px}
@@ -261,7 +261,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
   .hero{min-height:auto;padding:96px 24px 60px}
   .hero-logo{width:clamp(200px,72vw,320px)}
   .hero-cover{margin-bottom:36px;margin-left:calc(50% - 50vw);margin-right:0;padding:0;width:100vw}
-  .hero-cover-text{padding:24px var(--pad) 28px}
+  .hero-cover-text{padding:24px var(--pad) 28px;padding-left:max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)))}
   .hero-cover-img{width:100%;min-height:clamp(240px,58vw,380px);margin:0;padding:0}
   .hero-ctas{flex-direction:column;gap:20px}
   .stats{grid-template-columns:1fr 1fr}
